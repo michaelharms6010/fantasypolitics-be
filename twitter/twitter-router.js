@@ -11,9 +11,6 @@ const twitterConfig = {
 
 let T = new Twit(twitterConfig);
 
-// console.log(twitterConfig)
-// console.log("Stringified:", JSON.stringify(twitterConfig))
-// console.log(T);
 
 
 router.get("/", (req, res) => { 
@@ -33,6 +30,19 @@ router.get("/", (req, res) => {
 
         // }
     
+  });
+
+  router.get("/:search", (req, res) => { 
+            let search = req.params.search;
+            let searchParams = {
+                q: search,
+                count: 50
+            };
+            T.mode = "no-cors";
+            T.get('/search/tweets', searchParams, gotData);
+            function gotData(err, data, response) {
+                res.json(data);
+            }
   });
 
   module.exports = router;
