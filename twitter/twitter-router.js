@@ -17,11 +17,11 @@ let T = new Twit(twitterConfig);
 
 
 router.post("/", (req, res) => { 
-      const {search} = req.body;
-        if (search) {
+    //   const {search} = req.body;
+    //     if (search) {
             let searchParams = {
-                q: search,
-                count: 1
+                q: "zaddr",
+                count: 50
             };
             T.mode = "no-cors";
             T.get('/search/tweets', searchParams, gotData);
@@ -31,7 +31,7 @@ router.post("/", (req, res) => {
             
 
 
-        }
+        // }
     
   });
 
