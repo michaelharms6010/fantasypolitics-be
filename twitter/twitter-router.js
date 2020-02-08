@@ -16,7 +16,7 @@ let T = new Twit(twitterConfig);
 // console.log(T);
 
 
-router.post("/", (req, res) => { 
+router.get("/", (req, res) => { 
     //   const {search} = req.body;
     //     if (search) {
             let searchParams = {
