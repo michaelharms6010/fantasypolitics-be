@@ -21,13 +21,8 @@ router.get("/", (req, res) => {
                 count: 50
             };
             T.mode = "no-cors";
-            T.get('/search/tweets', searchParams, gotData);
-            function gotData(err, data, response) {
-                res.json(data);
-            }
+            T.get('/search/tweets', searchParams, (err, data, response) => res.json(data));
             
-
-
         // }
     
   });
@@ -39,10 +34,7 @@ router.get("/", (req, res) => {
                 count: 50
             };
             T.mode = "no-cors";
-            T.get('/search/tweets', searchParams, gotData);
-            function gotData(err, data, response) {
-                res.json(data);
-            }
+            T.get('/search/tweets', searchParams, (err, data, response) => res.json(data));
   });
 
   module.exports = router;
