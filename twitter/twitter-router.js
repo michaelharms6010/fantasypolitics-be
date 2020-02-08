@@ -21,7 +21,8 @@ router.post("/", (req, res) => {
         if (search) {
             let searchParams = {
                 q: search,
-                count: 100};
+                count: 100
+            };
             T.mode = "no-cors";
             T.get('/search/tweets', searchParams, gotData);
             function gotData(err, data, response) {
